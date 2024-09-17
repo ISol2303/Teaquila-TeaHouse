@@ -9,6 +9,7 @@
   },
   "author": "nam",
   "license": "ISC",
+  "homepage": "https://<username>.github.io/<repository-name>",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "ejs": "^3.1.10",

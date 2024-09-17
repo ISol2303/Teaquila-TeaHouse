@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title><%= product.name %> - Product Detail</title>
+</head>
+<body>
+    <div class="container">
+        <img
+        class="card-img-top "
+        src="<%= product.image && product.image.trim() !== '' ? '/uploads/' + product.image.split('/').pop() : '/path/to/default/image.jpg' %>"
+        alt="<%= product.name || 'Default Product Image' %>"
+    />
+        <h2><%= product.name %></h2>
+        <p><strong>Brand:</strong> <%= product.brand %></p>
+        <p><strong>Price:</strong> <%= product.price.toFixed(2) %> USD</p>
+        <p><strong>Description:</strong> <%= product.description %></p> <!-- Assuming you have a description field -->
+        <p><strong>Quantity:</strong> <%= product.quantity %> </p>
+        <div class="mb-3">
+            <a href="/add-to-cart/<%= product._id %>" class="btn btn-primary">Add to Cart</a>
+            <a href="/productlist" class="btn btn-secondary">Back to Products</a>
+        </div>
+    </div>
+</body>
+</html>
